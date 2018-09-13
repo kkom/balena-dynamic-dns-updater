@@ -5,7 +5,7 @@ services:
   ddclient:
     build: ./ddclient
     volumes:
-      - "ddclient-config:/config"
+      - "ddclient-config:/etc/ddclient"
     depends_on:
       - configure
   configure:

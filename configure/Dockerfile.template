@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY src/* ./
 
-CMD ["./replace.sh", "ddclient.conf.template", ">", "/config/ddclient.conf"]
+CMD ["./app.sh"]

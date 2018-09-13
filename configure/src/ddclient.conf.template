@@ -1,13 +1,13 @@
-protocol={protocol}
+protocol=$protocol
 
-use={use}
+use=$use
 
-server={server}
+server=$server
 
-ssl={ssl}
+ssl=$ssl
 
-login={login}
+login=$login
 
-password={password}
+password=$password
 
-{domain}
+$domain

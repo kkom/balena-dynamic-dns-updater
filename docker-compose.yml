@@ -1,6 +1,8 @@
 version: '2'
+volumes:
+    ddclient-config:
 services:
   ddclient:
     image: linuxserver/ddclient
     volumes:
-      - ./ddclient/config:/config
+      - "ddclient-config:/config"

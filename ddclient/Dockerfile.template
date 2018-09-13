@@ -1,7 +1,7 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
 
 # update base system
-RUN apk add --update ca-certificates perl perl-net-ip wget \
+RUN apk add --update ca-certificates perl perl-net-ip perl-io-socket-ssl wget \
   && rm -rf /var/cache/apk/*
 
 # install ddclient

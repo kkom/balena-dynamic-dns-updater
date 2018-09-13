@@ -1,0 +1,7 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-python:3
+
+WORKDIR /usr/src/app
+
+COPY src/* ./
+
+RUN ["python", "main.py"]

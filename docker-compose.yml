@@ -6,3 +6,9 @@ services:
     image: linuxserver/ddclient
     volumes:
       - "ddclient-config:/config"
+    depends_on:
+      - configure
+  configure:
+    build: ./configure
+    volumes:
+      - "ddclient-config:/config"

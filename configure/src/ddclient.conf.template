@@ -1,0 +1,13 @@
+protocol={protocol}
+
+use={use}
+
+server={server}
+
+ssl={ssl}
+
+login={login}
+
+password={password}
+
+{domain}

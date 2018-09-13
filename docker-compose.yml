@@ -1,10 +1,12 @@
 version: '2'
 volumes:
+    ddclient-cache:
     ddclient-config:
 services:
   ddclient:
     build: ./ddclient
     volumes:
+      - "ddclient-cache:/var/cache/ddclient"
       - "ddclient-config:/etc/ddclient"
     depends_on:
       - configure

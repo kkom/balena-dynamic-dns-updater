@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY src/* ./
 
-CMD ["./app.sh"]
+CMD ["sh", "app.sh"]

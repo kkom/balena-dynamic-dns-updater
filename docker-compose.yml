@@ -1,0 +1,6 @@
+version: '2'
+services:
+  ddclient:
+    image: linuxserver/ddclient
+    volumes:
+      - ./ddclient/config:/config

@@ -2,6 +2,6 @@ FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
 
 WORKDIR /app
 
-COPY src/* .
+COPY src/* ./
 
 CMD ["sh", "run.sh"]

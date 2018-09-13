@@ -1,0 +1,13 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
+
+# update base system
+RUN apk add --update ca-certificates perl perl-net-ip wget \
+  && rm -rf /var/cache/apk/*
+
+# install ddclient
+WORKDIR /usr/local/bin
+RUN wget 'https://raw.githubusercontent.com/ddclient/ddclient/master/ddclient' \
+  && sed -i -e 's/Data::Validate/Net/' ddclient \
+  && chmod +x ./*
+
+CMD ["ddclient", "-daemon=300", "-foreground", "-noquiet"]

@@ -3,7 +3,7 @@ volumes:
     ddclient-config:
 services:
   ddclient:
-    image: linuxserver/ddclient
+    build: ./ddclient
     volumes:
       - "ddclient-config:/config"
     depends_on:

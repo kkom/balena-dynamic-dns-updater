@@ -1,7 +1,7 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-alpine-python:3.6-slim
+FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY src/* ./
 
-RUN ["python", "main.py"]
+CMD ["./replace.sh", "ddclient.conf.template", ">", "/config.ddclient.conf"]

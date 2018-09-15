@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY src/* ./
 
-CMD ["sh", "run.sh"]
+# Run the configuration script and then wait, so that Resin does not try to
+# restart the container
+CMD ["sh", "configure.ssh", "&&", "tail", "-f", "/dev/null"]

@@ -6,4 +6,4 @@ COPY src/* ./
 
 # Run the configuration script and then wait, so that Resin does not try to
 # restart the container
-CMD ["sh", "configure.ssh", "&&", "tail", "-f", "/dev/null"]
+CMD ["sh", "configure.sh", "&&", "tail", "-f", "/dev/null"]

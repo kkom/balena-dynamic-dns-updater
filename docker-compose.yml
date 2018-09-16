@@ -14,3 +14,4 @@ services:
     build: ./configure
     volumes:
       - "ddclient-config:/config"
+    restart: on-failure

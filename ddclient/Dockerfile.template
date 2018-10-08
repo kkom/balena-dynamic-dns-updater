@@ -1,14 +1,14 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
 
 # Update base system
-RUN apk add --update ca-certificates perl perl-net-ip perl-io-socket-ssl wget \
+RUN apk add --update ca-certificates perl perl-net-ip perl-io-socket-ssl \
   && rm -rf /var/cache/apk/*
 
 # Install DDClient
 WORKDIR /usr/local/bin
-RUN wget "https://raw.githubusercontent.com/ddclient/ddclient/v3.9.0/ddclient" \
-  # Check the shashum of the externally downloaded file, note 2 spaces
-  && echo "40227308407fe5770d441851c97121cee8737aa1e50bb4b0e9d6719203e91899  ddclient" | sha256sum -c \
+ADD https://raw.githubusercontent.com/ddclient/ddclient/v3.9.0/ddclient .
+# Check the shashum of the externally downloaded file, note 2 spaces
+RUN echo "40227308407fe5770d441851c97121cee8737aa1e50bb4b0e9d6719203e91899  ddclient" | sha256sum -c \
   # Replace the IP address validation library with something available on Alpine
   && sed -i -e 's/Data::Validate/Net/' ddclient \
   # Make the program executable

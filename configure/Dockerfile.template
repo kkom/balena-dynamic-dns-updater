@@ -1,7 +1,0 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-alpine:latest
-
-WORKDIR /app
-
-COPY src/* ./
-
-CMD ["sh", "configure.sh"]

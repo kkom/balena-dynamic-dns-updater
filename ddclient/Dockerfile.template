@@ -14,4 +14,8 @@ RUN wget "https://raw.githubusercontent.com/ddclient/ddclient/v3.9.0/ddclient" \
   # Make the program executable
   && chmod +x ddclient
 
-CMD ["ddclient", "-daemon=300", "-foreground", "-noquiet"]
+# Install maintanance scripts
+WORKDIR /root
+COPY scripts/* ./
+
+CMD ["./run.sh"]
